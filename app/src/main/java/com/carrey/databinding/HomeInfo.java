@@ -10,6 +10,6 @@ public class HomeInfo {
 
     public HomeInfo(Class clzz) {
         this.clzz = clzz;
-        className=clzz.getName();
+        className=clzz.getSimpleName();
     }
 }

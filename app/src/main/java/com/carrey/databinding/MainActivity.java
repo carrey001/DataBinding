@@ -1,5 +1,6 @@
 package com.carrey.databinding;
 
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,8 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         mainBinding.recycle.setAdapter(new HomeAdapter(homeInfos));
 
     }
+
 
     private List<HomeInfo> homeInfos;
 
@@ -68,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private static class Holder extends RecyclerView.ViewHolder {
+    private  class Holder extends RecyclerView.ViewHolder {
 
         private ItemHomeBinding binding;
 
@@ -77,8 +81,15 @@ public class MainActivity extends AppCompatActivity {
             binding = DataBindingUtil.bind(itemView);
         }
 
-        public void bindData(HomeInfo info) {
+
+        public void bindData(final HomeInfo info) {
             binding.setHomeInfo(info);
+            binding.itemHome.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MainActivity.this.startActivity(new Intent(MainActivity.this,info.clzz));
+                }
+            });
         }
     }
 
