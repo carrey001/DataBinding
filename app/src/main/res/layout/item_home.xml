@@ -2,27 +2,29 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="homeInfo"
-            type="com.carrey.databinding.HomeInfo"/>
+            type="com.carrey.databinding.HomeInfo" />
 
         <variable
             name="activity"
-            type="com.carrey.databinding.MainActivity"/>
+            type="com.carrey.databinding.MainActivity" />
     </data>
 
-    <LinearLayout
-        android:id="@+id/item_home"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <!--<merge-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!-->-->
 
-        android:orientation="vertical">
-        <TextView
+        <Button
+            android:id="@+id/itemHome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:gravity="center"
             android:padding="4dp"
-            android:text="@{homeInfo.className}"/>
+            android:text="@{homeInfo.className}" />
 
-    </LinearLayout>
+    <!--</merge>-->
 </layout>

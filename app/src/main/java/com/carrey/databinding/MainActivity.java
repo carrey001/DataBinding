@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
 
 
-            return new Holder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home, null));
+            return new Holder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_home, parent,false));
         }
 
         @Override
