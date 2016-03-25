@@ -53,7 +53,7 @@ public class RecycleViewActivity extends AppCompatActivity {
         public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
 
 
-            return new Holder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycle, null));
+            return new Holder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_recycle, parent));
         }
 
         @Override
