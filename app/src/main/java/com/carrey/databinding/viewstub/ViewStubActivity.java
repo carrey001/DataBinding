@@ -1,6 +1,7 @@
 package com.carrey.databinding.viewstub;
 
 import android.databinding.DataBindingUtil;
+import android.databinding.ViewStubProxy;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,8 @@ public class ViewStubActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityViewstubBinding baseBinding = DataBindingUtil.setContentView(this, R.layout.activity_viewstub);
+        ((ViewStubProxy)baseBinding.viewStub).getViewStub().inflate();
+        baseBinding.setViewBean(new ViewBean("哈哈"));
 
     }
 }
